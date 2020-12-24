@@ -1,0 +1,136 @@
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="" class="nav-link" routerLink="/footer">Inicio</a>
+      </li>
+
+    </ul>
+  </nav>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="" class="brand-link" routerLink="/footer">
+      <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8" routerLink="/footer">
+      <span class="brand-text font-weight-light">SYSRA</span>
+    </a>
+    <div class="sidebar">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../../../assets/img/avatar3.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Vivian</a>
+        </div>
+      </div>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="fas fa-folder-plus " > </i>
+              <p> &nbsp;&nbsp;Requerimientos
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <!--
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link active" routerLink="/registrar">
+                  <i class="far fa-registered">&nbsp;&nbsp;Realizar Solicitud</i>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link active" routerLink="/listar">
+                  <i class="fas fa-list ">&nbsp;&nbsp;Listar Asociacion</i>
+                </a>
+              </li>
+            </ul>
+            -->
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link active" routerLink="/Listreq">
+                  <i class="fas fa-list ">&nbsp;&nbsp;Notificar Requisitos</i>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+  </aside>
+</div>
+
+<div class="content-wrapper">
+  <h1 class="text-center">Municipalidad Distrital de Chosica</h1>
+  <img src="../assets/img/logo-1.jpg" alt="" id="im">
+   <h2> Asociaciones</h2>
+  <table class="table table-hover">
+    <thead class="table-bg-primary">
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col"></th>
+        <th scope="col">Estado</th>
+        <th scope="col">Nombre asoc</th>
+        <th scope="col">Inf Adicional</th>
+        <th scope="col">N° Miembros</th>
+        <th scope="col">Fecha Constitucion</th>
+        <th scope="col">Tipo Asociacion</th>
+        <th scope="col">Casa Vecinal</th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Requisitos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asociacion of asociaciones">
+        <td>{{asociacion.ID_ASOC}}</td>
+        <td></td>
+           <td>{{asociacion.ESTADO}}</td>
+           <td>{{asociacion.NOM_ASC}}</td>
+           <td>{{asociacion.IMF_ADICIONAL}}</td>
+           <td>{{asociacion.N_MIENBROS}}</td>
+           <td>{{asociacion.F_CONSTITUCION}}</td>
+           <td>{{asociacion.NOM_TIPO}}</td>
+           <td>{{asociacion.NOMBRE_CV}}</td>
+           <td>{{asociacion.UBICACION}}</td>
+           <td>
+           <a type="button" class="btn btn-info" (click)="cargarReq(asociacion.ID_ASOC)">Requisitos</a>
+           </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-hover">
+    <thead class="table-bg-primary">
+      <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>F_REGISTRO</th>
+        <th>URL</th>
+        <th>ESTADO</th>
+        <th>CODIGO</th>
+        <th>ASOCIACION</th>
+        <th>CATEGORIA</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let documento of documentos">
+        <td>{{documento.ID_DOCU}}</td>
+        <td>{{documento.NOM_TIPO}}</td>
+        <td>{{documento.F_REGISTRO}}</td>
+        <td>{{documento.URL}}</td>
+        <td>{{documento.ESTADO}}</td>
+        <td>{{documento.CODIGO}}</td>
+        <td>{{documento.ASOCIACION_ID_ASOC}}</td>
+        <td>{{documento.CATEGORIA}}</td>
+        <td>
+        <a type="button" class="btn btn-success" (click)="reqapro(documento.ID_DOCU)"><i class="fa fa-pencil" aria-hidden="true"></i>Aprobado</a>
+        <a type="button" class="btn btn-danger" (click)="reqrepro(documento.ID_DOCU)"><i class="fa fa-pencil" aria-hidden="true"></i>Reprobado</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

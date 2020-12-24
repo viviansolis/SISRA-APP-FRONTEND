@@ -1,0 +1,98 @@
+<div class="wrapper">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a href="index3.html" class="brand-link">
+        <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">SISRA</span>
+      </a>
+      <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Dashboard</h1>
+          </div>
+          <div>
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
+                  <i class="fas fa-folder-plus " > </i>
+                  <p> &nbsp;&nbsp;Registro de Datos
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="" class="nav-link active" routerLink="/registrar">
+                      <i class="far fa-registered">&nbsp;&nbsp;Realizar Solicitud</i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="" class="nav-link active" routerLink="/listar">
+                      <i class="fas fa-list ">&nbsp;&nbsp;Listar Asociacion</i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="" class="nav-link active" routerLink="/listarasc">
+                      <i class="fas fa-list ">&nbsp;&nbsp;Listar Asociacion</i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="" class="nav-link active" routerLink="/Listreq">
+                      <i class="fas fa-list ">&nbsp;&nbsp;Notificar Requisitos</i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="navbar-nav ml-auto" style="margin-right: 50px;">
+            <a *ngIf="!authService.isAuthenticated()" href="#" data-toggle="dropdown" class="nav-link" [routerLink]="['/login']"><i class="fa fa-user-o"></i> Login</a>
+            <div *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
+                <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
+                    <i class="fa fa-user-o margen"></i>{{authService.usuario.username}} <b class="caret"></b></a>
+                    <div class="dropdown-menu">
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                  </div>
+            </div>
+         </div>
+        </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right"></ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    </aside>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link"routerLink="*">Inicio</a>
+
+    </ul>
+    <div *ngIf="authService.isAuthenticated()" class="navbar-nav" >
+    </div>
+    <div class="navbar-nav ml-auto" style="margin-right: 50px;">
+      <a *ngIf="!authService.isAuthenticated()" href="#" data-toggle="dropdown" class="nav-link" [routerLink]="['/login']"><i class="fa fa-user-o"></i> Login</a>
+      <div *ngIf="authService.isAuthenticated()" class="nav-item dropdown">
+          <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action">
+              <i class="fa fa-user-o margen"></i>{{authService.usuario.username}} <b class="caret"></b></a>
+              <div class="dropdown-menu">
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            </div>
+      </div>
+   </div>
+  </nav>
+
+</div>

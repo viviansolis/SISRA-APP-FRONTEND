@@ -1,0 +1,26 @@
+#van{
+    margin-left: 110px;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+#im{
+    margin-left: 1250px;
+   width: 150px;
+   height: 150px;
+   margin-top: -80px;
+}
+#caj{
+    float: right;
+
+}
+#cajita{
+    float: right;
+}
+#but{
+    float: right;
+}
+#ubic{
+    float: right;
+    margin-right: -300px;
+}
